@@ -20,8 +20,8 @@ const rover = async (args = []) => {
 const getInput = () => {
   const graph = core.getInput('graph')
   const variant = core.getInput('variant')
-  const federated = core.getInput('federated')
-  const convert = core.getInput('convert')
+  const federated = core.getInput('federated') === 'true'
+  const convert = core.getInput('convert') === 'true'
   const subgraph = core.getInput('subgraph')
   if (federated && !subgraph) throw new Error('federated graph requires subgraph input')
   const path = core.getInput('path')
